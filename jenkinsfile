@@ -1,7 +1,7 @@
 pipeline{
     agent any
     tools{
-        maven 'maven-3.6.3'   
+        maven 'm1'   
     }
 
     stages{
@@ -12,10 +12,10 @@ pipeline{
         }
         stage('deploy'){
             steps{
-
-                sh 'rm /opt/webserver1/webapps/*.war'
-                sh 'cp target/*.war /opt/webserver1/webapps/'
-                sh '/opt/webserver1/bin/catalina.sh run &'
+                    sh 'echo deploy stage'
+                //sh 'rm /opt/webserver1/webapps/*.war'
+               // sh 'cp target/*.war /opt/webserver1/webapps/'
+               // sh '/opt/webserver1/bin/catalina.sh run &'
 
             }
         }
